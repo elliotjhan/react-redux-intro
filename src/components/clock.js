@@ -9,15 +9,20 @@ class Clock extends Component {
     }
 
     render() {
-        console.log('Clock Props: ', this.props);
+
         return(
-            <h1>{this.props.time}</h1>
+            <div>
+                <h1>{this.props.time}</h1>
+                <h2>{this.props.date}</h2>
+            </div>
         );
+
     }
 }
 
 function mapStateToProps(state) {
     return {
+        date: state.clock.date,
         time: state.clock.time
     };
 }

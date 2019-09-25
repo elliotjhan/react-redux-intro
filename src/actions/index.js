@@ -1,7 +1,11 @@
+
 export function tick() {
+
     return {
-        type: 'TICK'
+        type: 'TICK',
+        payload: new Date().toLocaleTimeString()
     }
+
 }
 
 
