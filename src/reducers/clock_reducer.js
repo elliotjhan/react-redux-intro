@@ -1,3 +1,4 @@
+import types from '../actions/types';
 
 const DEFAULT_STATE = {
     date: new Date().toLocaleDateString(),
@@ -7,12 +8,11 @@ const DEFAULT_STATE = {
 
 
 function clockReducer(state = DEFAULT_STATE, action) { // first parameter is the current state whatever the reducer is responsible for  
-    
-    console.log('clock reducer action: ', action)
+        
     switch(action.type) { // action is an object
-        case 'TICK':
-            return { time: new Date().toLocaleTimeString() };                             
-        default:
+        case types.TICK: // our action tick is being passed in to our reducer
+            return { ...state, time: action.payload };   // payload key is being returned from the tick function in actions                          
+        default: // ...state keeps our old state and the time gets overwritten
             return state;
     }                                    
 
