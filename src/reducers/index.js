@@ -1,14 +1,20 @@
 import { combineReducers } from 'redux';
 import clockReducer from './clock_reducer';
 import themeReducer from './theme_reducer';
+import productsReducer from './products_reducer';
 
 const rootReducer = combineReducers({
     clock: clockReducer,
+    products: productsReducer,
     theme: themeReducer
 });
 
 export default rootReducer;
 
+
+
+
+// what our state looks like
 
 // state = {
 //     clock: {
@@ -17,6 +23,10 @@ export default rootReducer;
 //     },
 //      theme: {
 //          textColor: 'hotpink'
+//     },
+//     products: {
+//         list: [],
+//         details: null
 //     }
 // }
 
